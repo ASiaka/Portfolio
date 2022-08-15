@@ -1,0 +1,25 @@
+.acceuil-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+
+  .acceuil-content {
+    width: 70%;
+    height: 30%;
+    color: black;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px grey;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 5vw;
+      font-weight: bold;
+    }
+  }
+}
