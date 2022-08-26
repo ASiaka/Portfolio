@@ -6,8 +6,8 @@
 
   .content-items {
     width: 20%;
-    height: 100%;
-    background-color: rgb(249, 251, 251);
+    // height: 100%;
+    background-color: #F5F5F5;
     flex: 1;
 
     .items {
@@ -32,7 +32,7 @@
   .content-parcours {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     flex: 2;
 
     .parcours {

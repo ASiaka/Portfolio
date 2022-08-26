@@ -1,63 +1,70 @@
-.nav-content {
-    box-shadow: 1px 1px 1px 1px gainsboro;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    // height: 7rem;
-    height: 15vh;
-    position: relative;
-    font-weight: 600;
+.nav-container {
+    height: 10vh;
 
-    .nav {
+    .nav-content {
+        box-shadow: 1px 1px 1px 1px gainsboro;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        width: 80%;
-        
-        &-logo {
-            max-width: 150px;
-        }
-        &-list {
+        width: 100%;
+        // height: 7rem;
+        height: 10vh;
+        position: fixed;
+        // position: relative;
+        font-weight: 600;
+        background-color: white;
+        z-index: 1;
+
+        .nav {
             display: flex;
-            color: gray;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
             
-            li {
-                margin: 10px;
-                position: relative;
+            &-logo {
+                max-width: 150px;
+            }
+            &-list {
+                display: flex;
+                color: gray;
+                
+                li {
+                    margin: 10px;
+                    position: relative;
 
-                :hover {
-                    color: black;
+                    :hover {
+                        color: black;
 
+                    }
+                }
+                .active::after {
+                    content: "";
+                    height: 5px;
+                    width: 100%;
+                    background-color: black;
+                    position: absolute;
+                    top: 25px;
+                    left: 0;
+                }
+
+                @media screen and (max-width: 800px) {
+                    display: none;
                 }
             }
-            .active::after {
-                content: "";
-                height: 5px;
-                width: 100%;
-                background-color: black;
-                position: absolute;
-                top: 25px;
-                left: 0;
+
+            &-menu {
+                z-index: 2;
+
+                @media screen and (min-width: 800px) {
+                    display: none;
+                }
             }
+            .fa-xmark {
+                color: gray;
 
-            @media screen and (max-width: 800px) {
-                display: none;
-            }
-        }
-
-        &-menu {
-            z-index: 2;
-
-            @media screen and (min-width: 800px) {
-                display: none;
-            }
-        }
-        .fa-xmark {
-            color: gray;
-
-            &:hover {
-                color: black;
+                &:hover {
+                    color: black;
+                }
             }
         }
     }
