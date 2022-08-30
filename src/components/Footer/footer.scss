@@ -1,0 +1,23 @@
+.footer-container {
+  height: 7vh;
+
+  .footer-content {
+    background-color: #222222;
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+
+    .icon {
+
+      i {
+        color: gainsboro;
+        margin: 0 10px;
+      }
+    }
+  }
+
+}

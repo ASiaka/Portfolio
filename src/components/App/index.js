@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 import Acceuil from '../Acceuil/Acceuil';
 import Parcours from '../Parcours/Parcours';
 import Projets from '../Projets/Projets';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

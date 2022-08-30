@@ -2,18 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   height: 100%;
-  background-color: #F5F5F5;
 
   .acceuil-content {
-    // width: 70%;
-    // height: 30%;
-    // color: black;
-    // border: 1px solid black;
-    // border-radius: 15px;
-    // box-shadow: 5px 5px 10px grey;
-    // margin: 30px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,10 +13,10 @@
     h1 {
       font-size: 5vw;
       font-weight: bold;
-      color: white;
+      color: #222222;
       // -webkit-text-stroke: 2px black;
-      text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-      1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+      // text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+      // 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     }
   }
 }

@@ -3,19 +3,27 @@
   flex-wrap: wrap;
   justify-content: center;
   height: 100%;
-
+  
+  @media screen and (max-width: 793px) {
+    // flex-direction: row;
+  }
   .content-items {
     width: 20%;
     // height: 100%;
-    background-color: #F5F5F5;
+    background-color: white;
     flex: 1;
+
+    min-width: 25rem;
+    @media screen and (max-width: 793px) {
+      order: 1;
+    }
 
     .items {
       text-align: center;
       margin: 20px 10px;
 
       &-title {
-        width: 90%;
+        width: 23rem;
         padding: 10px 30px;
         background-color: black;
         color: white;
@@ -67,9 +75,9 @@
         .intitule {
           font-weight: bold;
         }
-        .organisme {
+        // .organisme {
 
-        }
+        // }
         .periode {
           color: gray;
         }
