@@ -3,4 +3,34 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  flex-direction: column;
+
+  .contact-title {
+    font-size: 1.5rem;
+    // font-weight: 450;
+  }
+
+  .contact-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+
+    .contact-form {
+      width: 70%;
+
+      .contact-input {
+        border: 1px solid #e5e5e5;
+        border-radius: 5px;
+        // outline: 0;
+        width: 100%;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+      }
+
+      #contact-button {
+        background-color: #222222;
+        color: gainsboro;
+      }
+    }
+  }
 }
