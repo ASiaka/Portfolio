@@ -1,0 +1,42 @@
+.theme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  top: 100px;
+  z-index: 1;
+
+  .theme-content {
+    display: flex;
+    
+    i {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px 2px 2px 2px gainsboro;
+      border-radius: 5px 0 0 5px;
+      background-color: white;
+      margin-top: 25px;
+
+      // &:hover {
+      //   background-color: #222222;
+      //   color: white;
+      // }
+    }
+  
+    .theme-setting {
+      width: 150px;
+      height: 250px;
+      background-color: white;
+      box-shadow: 2px 2px 2px 2px gainsboro;
+      border-radius: 5px 0 0 5px;
+      padding: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
