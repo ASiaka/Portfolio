@@ -2,5 +2,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; 
+  height: 100%;
+  flex-direction: column;
+
+  .projets-title {
+    font-size: 1.5rem;
+  }
+
+  .projets-content {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 2px 2px gainsboro;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .slides {
+      width: 30px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
 }

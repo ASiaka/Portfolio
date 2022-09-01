@@ -10,7 +10,7 @@
   .theme-content {
     display: flex;
     
-    i {
+    .icon-setting {
       width: 35px;
       height: 35px;
       display: flex;
@@ -20,7 +20,21 @@
       border-radius: 5px 0 0 5px;
       background-color: white;
       margin-top: 25px;
+      cursor: pointer;
 
+      i {
+        animation: rotate-center infinite 1s linear;
+  
+        @keyframes rotate-center {
+          from{
+            transform: rotate(360deg);
+            }
+            to{
+              transform: rotate(0deg);
+            }
+        }
+      }
+    
       // &:hover {
       //   background-color: #222222;
       //   color: white;
@@ -34,6 +48,41 @@
       box-shadow: 2px 2px 2px 2px gainsboro;
       border-radius: 5px 0 0 5px;
       padding: 10px;
+
+      .colors {
+        display: flex;
+
+        .color {
+          width: 25px;
+          height: 25px;
+          border-radius: 5px;
+          margin: 10px 5px;
+          cursor: pointer;
+        }
+        .black {
+          background-color: black;
+        }
+        .blue {
+          background-color: blue;
+        }
+        .orange {
+          background-color: orange;
+        }
+      }
+      .mode {
+        .btn-mode {
+          margin: 10px 5px;
+          border-radius: 5px;
+        }
+        .dark {
+          color: white;
+          background-color: black;
+        }
+        .light {
+          color: black;
+          background-color: white;          
+        }
+      }
     }
     .hidden {
       display: none;
