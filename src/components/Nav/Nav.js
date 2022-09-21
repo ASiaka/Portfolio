@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 import ModalNav from './ModalNav/ModalNav';
 
-import logo from './logo-ASia.png';
+// import logo from './logo-ASia.png';
+import logo from './AS.png';
 import './nav.scss';
 
 function Nav() {
@@ -12,6 +13,7 @@ function Nav() {
     <div className="nav-container">
       <nav className="nav-content">
         <div className="nav">
+          {/* <a href="/"><img className="nav-logo" src={logo} alt="logo ASia" /></a> */}
           <a href="/"><img className="nav-logo" src={logo} alt="logo ASia" /></a>
 
           {!toggleMenuBurger && <ModalNav setToggleMenuBurger={setToggleMenuBurger} />}

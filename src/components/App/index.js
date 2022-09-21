@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import Theme from '../Theme/Theme';
-import Acceuil from '../Acceuil/Acceuil';
+import Accueil from '../Accueil/Accueil';
 import Parcours from '../Parcours/Parcours';
 import Projets from '../Projets/Projets';
 import Contact from '../Contact/Contact';
@@ -21,7 +21,7 @@ function App() {
       <Nav />
       <Theme />
       <Routes>
-        <Route path="/" element={<Acceuil />} />
+        <Route path="/" element={<Accueil />} />
         <Route path="/parcours" element={<Parcours {...parcoursData} />} />
         <Route path="/projets" element={<Projets />} />
         <Route path="/contact" element={<Contact />} />

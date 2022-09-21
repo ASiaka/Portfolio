@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './footer.scss';
 
 function Footer() {
@@ -6,8 +5,8 @@ function Footer() {
     <div className="footer-container">
       <footer className="footer-content">
         <div className="icon">
-          <Link to="#"><i className="fa-brands fa-linkedin fa-2x"></i></Link>
-          <Link to="#"><i className="fa-brands fa-github fa-2x"></i></Link>
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/siakaandhum/"><i className="fa-brands fa-linkedin fa-2x"></i></a>
+          <a target="_blank" rel="noreferrer" href="https://github.com/ASiaka"><i className="fa-brands fa-github fa-2x"></i></a>
         </div>
       </footer>
     </div>

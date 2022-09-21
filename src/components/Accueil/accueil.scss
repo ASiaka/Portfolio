@@ -1,0 +1,67 @@
+.accueil-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .accueil-content {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 5vw;
+      font-weight: bold;
+      color: #222222;
+    }
+
+    .icon-language {
+      margin-top: 25px;
+      display: flex;justify-content: center;
+      flex-wrap: wrap;
+
+      .fa-brands {
+        margin: 25px 3px;
+        transition: 1s;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .fa-brands:hover {
+        transform: scale(1.7);
+        // border: #0076BE 3px solid;
+        background-color: #F5F5F5;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .fa-html5{
+        color: #FC4D18;
+      }
+      .fa-css3-alt{
+        color: #0076BE;
+      }
+      .fa-sass{
+        color: #CF649A;
+      }
+      .fa-square-js{
+        color: #F7E018;
+      }
+      .fa-react{
+        color: #00DCFF;
+      }
+      .fa-php{
+        color: #787CB4;
+      }
+      .fa-symfony{
+        color: black;
+      }
+      .fa-laravel{
+        color: #FF291A;
+      }
+    }
+  }
+}
