@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 .contact-container {
   display: flex;
   justify-content: center;
@@ -27,8 +29,14 @@
         margin-bottom: 20px;
       }
 
+      .light {
+        background-color: $marine;
+      }
+      .dark {
+        background-color: $marineDark;
+      }
       #contact-button {
-        background-color: #222222;
+        // background-color: $marine;
         color: gainsboro;
       }
     }

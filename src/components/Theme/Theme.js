@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import Proptypes from 'prop-types';
 import './theme.scss';
 
-function Theme() {
+function Theme({ mode, setMode}) {
   const [openSetting, setOpenSetting] = useState(true);
 
   function handleOpenSetting() {
@@ -30,13 +31,28 @@ function Theme() {
           <hr/>
           <p className="title-mode">Mode</p>
           <div className="mode">
-            <button className="btn-mode dark">Dark</button>
-            <button className="btn-mode light">Light</button>
+            <button 
+              className="btn-mode dark"
+              onClick={() => setMode('dark')}
+            >
+              Dark
+            </button>
+            <button
+              className="btn-mode light"
+              onClick={() => setMode('light')}
+            >
+              Light
+            </button>
           </div>
         </div>
       </div>
     </div>
   )
+}
+
+Theme.propTypes = {
+  mode: Proptypes.string.isRequired,
+  setMode: Proptypes.func.isRequired,
 }
 
 export default Theme;

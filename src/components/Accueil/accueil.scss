@@ -11,10 +11,23 @@
     align-items: center;
     flex-direction: column;
 
-    h1 {
-      font-size: 5vw;
-      font-weight: bold;
-      color: #222222;
+    .accueil-title {
+      text-align: end;
+      h1 {
+        font-size: 5vw;
+        font-weight: bold;
+        color: gainsboro;
+        // color: #222222;
+      }
+      h2 {
+        font-size: 2vw;
+        padding: 5px;
+        color: gainsboro;
+  
+        span {
+          color: #00DCFF;
+        }
+      }
     }
 
     .icon-language {
@@ -61,6 +74,16 @@
       }
       .fa-laravel{
         color: #FF291A;
+      }
+    }
+
+    .slogan {
+      color: #F7E018;
+      position: fixed;
+      bottom: 12vh;
+
+      span {
+        color: #00DCFF;
       }
     }
   }

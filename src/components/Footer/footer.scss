@@ -1,8 +1,18 @@
+@import '../../styles/vars';
+
 .footer-container {
   height: 7vh;
 
+  .light {
+    background-color: $marine;
+  }
+  .dark {
+    background-color: $marineDark;
+  }
   .footer-content {
-    background-color: #222222;
+    // background-color: #222222;
+    // background-color: $marineDark;
+    // background-color: $marine;
     width: 100%;
     height: 7vh;
     display: flex;

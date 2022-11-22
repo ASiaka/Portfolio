@@ -1,86 +1,46 @@
 .parcours-container {
+  text-align: center;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  height: 100%;
-  
-  @media screen and (max-width: 793px) {
-    // flex-direction: row;
-  }
-  .content-items {
-    width: 20%;
-    // height: 100%;
-    background-color: white;
-    flex: 1;
-
-    min-width: 25rem;
-    @media screen and (max-width: 793px) {
-      order: 1;
-    }
-
-    .items {
-      text-align: center;
-      margin: 20px 10px;
-
-      &-title {
-        width: 23rem;
-        padding: 10px 30px;
-        background-color: black;
-        color: white;
-        margin: 3px;
-        box-shadow: 1px 1px 1px 1px gainsboro;
-        margin: 0 auto 20px auto;
-      }
-      .competences {
-        margin: 10px auto;
-      }
-    }
-  }
 
   .content-parcours {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex: 2;
+    margin-top: 25px;
+
+    .white-background {
+      background-color: white;
+      margin: 25px 0;
+      padding: 25px 0;
+    }
 
     .parcours {
-      margin: 20px 10px;
+      width: 100vw;
+
+      .competence-bloc {
+        display: flex;
+        justify-content: center;
+
+        .competences {
+          width: 55em;
+        }
+      }
 
       &-title {
-        width: 23rem;
-        padding: 10px 30px;
-        background-color: black;
-        color: white;
-        margin: 3px;
-        box-shadow: 1px 1px 1px 1px gainsboro;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
       }
       &-card {
-        width: 23rem;
-        background-color: white;
-        padding: 10px 30px;
-        margin: 3px;
-        box-shadow: 1px 1px 1px 1px gainsboro;
-        position: relative;
+        margin: 5px 0;
+      }
 
-        :hover::after {
-          content: "";
-          width: 10px;
-          height: 100%;
-          background-color: black;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+      .periode {
+        color: gray;
+      }
+      .organisme {
 
-        .intitule {
-          font-weight: bold;
-        }
-        // .organisme {
+      }
+      .intitule {
+        font-weight: 500;
 
-        // }
-        .periode {
-          color: gray;
-        }
       }
     }
   }

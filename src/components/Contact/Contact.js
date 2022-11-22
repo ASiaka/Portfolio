@@ -1,7 +1,8 @@
+import Proptypes from 'prop-types';
 import { useState } from 'react';
 import './contact.scss';
 
-function Contact() {
+function Contact({mode}) {
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
   const [mail, setMail] = useState('');
@@ -10,28 +11,45 @@ function Contact() {
 
 
   function handleChangeNom(event) {
-    setNom(event.currentTarget.value);
+    setNom(event.currentTarget.value.trim());
   };
   function handleChangePrenom(event) {
-    setPrenom(event.currentTarget.value);
+    setPrenom(event.currentTarget.value.trim());
   };
   function handleChangeMail(event) {
-    setMail(event.currentTarget.value);
+    setMail(event.currentTarget.value.trim());
   };
   function handleChangeSujet(event) {
-    setSujet(event.currentTarget.value);
+    setSujet(event.currentTarget.value.trim());
   };
   function handleChangeMessage(event) {
-    setMessage(event.currentTarget.value);
+    setMessage(event.currentTarget.value.trim());
   };
 
   console.log(nom);
+
+  function regexTest(e) {
+    e.preventDefault();
+    console.log("regexTest");
+    const namesValue = document.querySelector('.nom');
+    // let regexEmail = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
+    let regexNames = /^([a-zA-Z]{1,})([-']?[a-zA-Z]+)\s([a-zA-Z]+)$/;
+    let regexEmail = /^([a-zA-Z0-9_\-.]{2,})@([a-zA-Z]{3,7})\.([a-zA-Z]{2,5})$/;
+    
+    if (!regexNames.test(namesValue)) {
+      console.log('nom invalide!');
+    }
+  }
+  // regexTest();
 
   return (
     <main className="contact-container">
       <h1 className="contact-title">Contact</h1>
       <div className="contact-content">
-        <form className="contact-form">
+        <form 
+          className="contact-form"
+          onSubmit={regexTest}
+        >
           <input type="text"
             name="nom"
             placeholder="Nom"
@@ -74,11 +92,15 @@ function Contact() {
             onChange={handleChangeMessage}
           />
           <button type="submit"
-            name="envoyer" className="contact-input" id="contact-button">Envoyer</button>
+            name="envoyer" className={`contact-input ${mode}`} id="contact-button">Envoyer</button>
         </form>
       </div>
     </main>
   );
+}
+
+Contact.propTypes = {
+  mode: Proptypes.string.isRequired,
 }
 
 export default Contact;

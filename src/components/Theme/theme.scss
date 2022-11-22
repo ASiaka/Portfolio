@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 .theme-container {
   display: flex;
   justify-content: center;
@@ -63,7 +65,7 @@
           background-color: black;
         }
         .blue {
-          background-color: blue;
+          background-color: $marine;
         }
         .orange {
           background-color: orange;
