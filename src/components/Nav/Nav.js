@@ -20,13 +20,14 @@ function Nav() {
 
           <ul className="nav-list">
             <li><NavLink to="/">Acceuil</NavLink></li>
+            {/* <li><NavLink to="">A propos</NavLink></li> */}
             <li><NavLink to="/parcours">Parcours</NavLink></li>
             <li><NavLink to="/projets">Projets</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
           </ul>
           <div className="nav-menu">
             <i
-              className={toggleMenuBurger ? 'fa-solid fa-bars fa-2x' : 'fa-solid fa-xmark fa-2x'}
+              className={toggleMenuBurger ? 'fa-solid fa-bars fa-1x' : 'fa-solid fa-xmark fa-1x'}
               onClick={() => {
                 console.log('Menu cliqué');
                 return (

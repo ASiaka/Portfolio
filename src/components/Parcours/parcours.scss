@@ -1,46 +1,169 @@
 .parcours-container {
-  text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  height: 100%;
 
-  .content-parcours {
-    margin-top: 25px;
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+  @media (max-width: 345px) {
+    font-size: 11px;
+  }
+  
+  @media screen and (max-width: 793px) {
+    // flex-direction: row;
+  }
+  .content-items {
+    width: 20%;
+    // height: 100%;
+    // background-color: white;
+    flex: 1;
 
-    .white-background {
-      background-color: white;
-      margin: 25px 0;
-      padding: 25px 0;
+    min-width: 25rem;
+
+    @media (max-width: 400px) {
+      min-width: 20rem;
+    }
+    @media (max-width: 345px) {
+      min-width: 15rem;
     }
 
-    .parcours {
-      width: 100vw;
+    // @media screen and (max-width: 793px) {
+    //   // order: 1;
+    // }
 
-      .competence-bloc {
-        display: flex;
-        justify-content: center;
+    .titles {
+      margin: 25px 0;
+      display: flex;
+      justify-content: center;
 
-        .competences {
-          width: 55em;
+      @media (max-width: 400px) {
+        font-size: 16px;
+      }
+
+      .title {
+        width: 190px;
+
+        &-one {
+          font-weight: bold;
+          background-color: white;
+          padding: 7px 10px;
+          width: fit-content;
+          margin: 0 auto 0 0;
+          // border-bottom: 1px black solid;
         }
+  
+        &-two {
+          background-color: white;
+          padding: 7px 10px;
+          width: fit-content;
+          margin: 0 0 0 auto;
+          border-top: 1px black solid;
+        }
+      }
+    }
+
+    .items {
+      text-align: center;
+      margin: 20px 10px;
+
+      @media (min-width: 794px) and (max-width: 1188px) {
+        position: fixed;
+        left: 5px;
+        top: 10vh;
       }
 
       &-title {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
+        width: 23rem;
+        padding: 10px 30px;
+        background-color: black;
+        color: white;
+        margin: 3px;
+        box-shadow: 1px 1px 1px 1px gainsboro;
+        margin: 0 auto 20px auto;
+
+        @media (max-width: 400px) {
+          width: 20rem;
+        }
+        @media (max-width: 345px) {
+          width: 15rem;
+        }
+      }
+      .competences {
+        margin: 10px auto;
+      }
+    }
+  }
+
+  .content-parcours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex: 2;
+    background-color: white;
+
+    .parcours {
+      margin: 20px 10px;
+
+      &-title {
+        width: 23rem;
+        padding: 10px 30px;
+        background-color: black;
+        color: white;
+        margin: 3px;
+        box-shadow: 1px 1px 1px 1px gainsboro;
+
+        @media (max-width: 400px) {
+          width: 20rem;
+        }
+        @media (max-width: 345px) {
+          width: 15rem;
+        }
       }
       &-card {
-        margin: 5px 0;
-      }
+        width: 23rem;
+        background-color: white;
+        padding: 10px 30px;
+        margin: 3px;
+        box-shadow: 1px 1px 1px 1px gainsboro;
+        position: relative;
 
-      .periode {
-        color: gray;
-      }
-      .organisme {
+        @media (max-width: 400px) {
+          width: 20rem;
+        }
+        @media (max-width: 345px) {
+          width: 15rem;
+        }
 
-      }
-      .intitule {
-        font-weight: 500;
+        &:hover {
+          transform: scale(1.01);
+        }
 
+        &:hover::after {
+          content: "";
+          width: 10px;
+          height: 100%;
+          background-color: black;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .intitule {
+          font-weight: 500;
+        }
+        // .organisme {
+
+        // }
+        .periode {
+          color: gray;
+        }
+      }
+      .nextCard {
+        @media (max-width: 1188px) {
+          margin-bottom: 7vh;
+        }
       }
     }
   }

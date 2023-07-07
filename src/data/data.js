@@ -6,7 +6,6 @@ export default
       'PHP (Orienté objet, MVC, API Rest, MySQL)',
       'JavaScript vanilla',
       'ReactJS, Redux',
-      'WordPress',
       'Photoshop',
       'Illustrator',
       'Indesign',
@@ -17,7 +16,7 @@ export default
 
   formations: [
     {
-      intitule: 'Titre Professionnel de Développeur Web et Web Mobile (niveau 5)',
+      intitule: 'TP Développeur Web (niveau 5)',
       organisme: 'Ecole O’clock',
       periode: '28/03/22 - 08/09/22',
     },
@@ -29,7 +28,7 @@ export default
     },
 
     {
-      intitule: 'Parcours d’accès à la qualification des métiers des industries graphiques',
+      intitule: 'Formation offset, Massicot, PAO',
       organisme: 'MÉDIAGRAF',
       periode: '29/03/12 - 27/07/12',
     },
@@ -41,7 +40,7 @@ export default
     },
 
     {
-      intitule: 'Formation préparatoire à l’entrée au CFA’com',
+      intitule: 'Formation PAO',
       organisme: 'CFA’com de Bagnolet',
       periode: '21/03/11 - 29/06/11',
     },
@@ -61,9 +60,15 @@ export default
 
   experiences: [
     {
+      intitule: 'Stage Développeur web - React',
+      organisme: 'AP Graphiste',
+      periode: '12/09/22 - 04/11/22',
+    },
+
+    {
       intitule: 'Poseur de compteur gaz',
       organisme: 'GIE KAUNTARA',
-      periode: 'Depuis le 23/10/17',
+      periode: '23/10/17 - 28/02/23',
     },
 
     {
@@ -73,13 +78,13 @@ export default
     },
 
     {
-      intitule: 'Agent d’exploitation transport et logistique',
+      intitule: 'Manutentionnaire',
       organisme: 'GEODIS',
       periode: '17/10/16 - 29/11/16',
     },
 
     {
-      intitule: 'Conducteur de machine offset, massicotier',
+      intitule: 'Conducteur offset, massicotier',
       organisme: 'SNCF',
       periode: '01/09/15 - 05/02/16',
     },
@@ -91,7 +96,7 @@ export default
     },
 
     {
-      intitule: 'Apprenti graphiste «création et pose d’enseigne»',
+      intitule: 'Apprenti graphiste',
       organisme: 'AVYS',
       periode: '24/09/12 - 31/07/13',
     },

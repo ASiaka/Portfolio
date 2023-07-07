@@ -14,6 +14,14 @@ function ModalNav({ setToggleMenuBurger }) {
             Acceuil
           </NavLink>
         </li>
+        {/* <li>
+          <NavLink
+            to="#"
+            onClick={() => setToggleMenuBurger(true)}
+          >
+            A propos
+          </NavLink>
+        </li> */}
         <li>
           <NavLink
             to="/parcours"

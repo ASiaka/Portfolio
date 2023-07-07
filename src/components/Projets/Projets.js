@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './projets.scss';
 
 let value = 0;
@@ -41,6 +41,22 @@ function Projets() {
     }
   ]
   console.log(myProjects);
+
+  useEffect(() => {
+    
+    const interval = setInterval(() => {
+
+      next();
+      // console.log("interval");
+      // value += 1;
+      // if(value < 0 || value > myProjects.length -1) {
+      //   value = 0
+      // }
+      // setIndex(value)
+    }, 3000)
+
+  }, [])
+
 
   return (
     <main className="projets-container">

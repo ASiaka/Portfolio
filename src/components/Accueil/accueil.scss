@@ -5,7 +5,6 @@
   height: 100%;
 
   .accueil-content {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,78 +12,148 @@
 
     .accueil-title {
       text-align: end;
+      margin-bottom: 20px;
+
       h1 {
-        font-size: 5vw;
+        font-size: 3.7em;
         font-weight: bold;
-        color: gainsboro;
-        // color: #222222;
+        color: rgb(205, 205, 205);
+
+        @media (max-width: 850px) {
+          font-size: 2.7em;
+        }
+        @media (max-width: 600px) {
+          font-size: 1.7em;
+        }
       }
+
       h2 {
-        font-size: 2vw;
+        font-size: 1.6em;
         padding: 5px;
-        color: gainsboro;
+        color: rgb(205, 205, 205);
   
         span {
           color: #00DCFF;
+        }
+
+        @media (max-width: 850px) {
+          font-size: 1.15em;
+        }
+        @media (max-width: 600px) {
+          font-size: 0.7em;
         }
       }
     }
 
     .icon-language {
-      margin-top: 25px;
       display: flex;justify-content: center;
       flex-wrap: wrap;
 
-      .fa-brands {
-        margin: 25px 3px;
+      .icons {
+        width: 50px;
+        height: 50px;
+        margin: 15px;
         transition: 1s;
-        width: 100px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .fa-brands:hover {
-        transform: scale(1.7);
-        // border: #0076BE 3px solid;
-        background-color: #F5F5F5;
-        border-radius: 50%;
-        z-index: 1;
-      }
-      .fa-html5{
-        color: #FC4D18;
-      }
-      .fa-css3-alt{
-        color: #0076BE;
-      }
-      .fa-sass{
-        color: #CF649A;
-      }
-      .fa-square-js{
-        color: #F7E018;
-      }
-      .fa-react{
-        color: #00DCFF;
-      }
-      .fa-php{
-        color: #787CB4;
-      }
-      .fa-symfony{
-        color: black;
-      }
-      .fa-laravel{
-        color: #FF291A;
-      }
-    }
 
-    .slogan {
-      color: #F7E018;
-      position: fixed;
-      bottom: 12vh;
+        &:hover {
+          transform: scale(1.7);
+          background-color: #F5F5F5;
+          z-index: 1;
+        }
 
-      span {
-        color: #00DCFF;
+        @media (max-width: 850px) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .js {
+        @media screen and (max-width: 480px) {
+          order: 5;
+        }
+      }
+      .react {
+        @media screen and (max-width: 420px) {
+          order: 6;
+        }
       }
     }
   }
+
+  .slogan {
+    color: rgb(205, 205, 205);
+    position: fixed;
+    bottom: 12vh;
+
+    span {
+      color: gainsboro;
+    }
+  }
+
+  #progress_bloc {
+    position: fixed;
+    bottom: 8.5vh;
+    width: 200px;
+    height: 7px;
+    padding: 1px;
+    border: rgb(205, 205, 205) 1px solid;
+    border-radius: 10px;
+    box-sizing: content-box;
+
+    .progress {
+      height: 100%;
+      border-radius: 10px 0 0 10px;
+      transition: width 1s;
+      background-color: rgb(205, 205, 205);
+    }
+    .progress_60 {
+      width: 60%;
+    }
+    .progress_50 {
+      width: 50%;
+    }
+    .progress_40 {
+      width: 40%;
+    }
+    .progress_30 {
+      width: 30%;
+    }
+    .progress_20 {
+      width: 20%;
+    }
+    .progress_0 {
+      width: 0%;
+      height: 7px;
+      border-radius: 10px 0 0 10px;
+      transition: width 1s;
+      background-color: rgb(205, 205, 205);
+    }
+  }
 }
+
+// .html{
+//   color: #FC4D18;
+// }
+// .css{
+//   color: #0076BE;
+// }
+// .sass{
+//   color: #CF649A;
+// }
+// .js{
+//   color: #F7E018;
+//   }
+// }
+// .react{
+//   color: #00DCFF;
+//   }
+// }
+// .php{
+//   color: #787CB4;
+// }
+// .symfony{
+//   color: black;
+// }
+// .laravel{
+//   color: #FF291A;
+// }

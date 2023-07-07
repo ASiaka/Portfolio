@@ -4,47 +4,48 @@ import './parcours.scss';
 function Parcours({ formations, experiences, competences }) {
   return (
     <main className="parcours-container">
-
-      <div className="content-parcours">
-        <div className="parcours">
-          <h3 className="parcours-title">Formations</h3>
-          {
-            formations.map((formation, key) => (
-              <p className="parcours-card" key={key}>
-                <span className="periode">{formation.periode} </span>
-                <span className="organisme">{formation.organisme} </span>
-                <span className="intitule">{formation.intitule}</span>
-              </p>
-            ))
-          }
-        </div>
-        <div className="parcours white-background">
-          <h3 className="parcours-title">Expériences</h3>
-          {
-            experiences.map((experience, key) => (
-              <p className="parcours-card" key={key}>
-                <span className="periode">{experience.periode} </span>
-                <span className="organisme">{experience.organisme} </span>
-                <span className="intitule">{experience.intitule} </span>
-              </p>
-            ))
-          }
-        </div>
-
-        <div className="parcours">
-          <h3 className="parcours-title">Compétences</h3>
-          <div className="competence-bloc">
-            <p className="competences">
-            {
-              competences.map((competence, key) => (
-                <span key={key}>{competence} </span>
-              ))
-            }
-            </p>
+      <div className="content-items">
+        <div className="items">
+          <div className="titles">
+            <div className="title">
+              <h1 className="title-one">ALTERNANCE</h1>
+              <h1 className="title-two">Développeur Web</h1>
+            </div>
           </div>
+          <h3 className="items-title">COMPETENCES</h3>
+          {
+            competences.map((competence) => (
+              <p className="competences" key={competence}>{competence}</p>
+            ))
+          }
         </div>
       </div>
-
+      <div className="content-parcours">
+        <div className="parcours">
+          <h3 className="parcours-title">FORMATIONS</h3>
+          {
+            formations.map((formation, index) => (
+              <div className="parcours-card" key={index}>
+                <p className="intitule">{formation.intitule}</p>
+                <p className="organisme">{formation.organisme}</p>
+                <p className="periode">{formation.periode}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div className="parcours">
+          <h3 className="parcours-title">EPERIENCES</h3>
+          {
+            experiences.map((experience, index) => (
+              <div className={`parcours-card${index === 6 ? " nextCard" : ""}`} key={index}>
+                <p className="intitule">{experience.intitule}</p>
+                <p className="organisme">{experience.organisme}</p>
+                <p className="periode">{experience.periode}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </main>
   );
 }
