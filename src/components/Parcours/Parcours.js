@@ -18,8 +18,31 @@ function Parcours({ formations, experiences, competences }) {
           </div>
           <h3 className="items-title">COMPETENCES</h3>
           {
-            competences.map((competence) => (
-              <p className="competences" key={competence}>{competence}</p>
+            competences.map((competence, index) => (
+              <p className="competences" key={index}>
+                {
+                  index === 0 &&
+                  <>
+                    <span className="strong">{competence.slice(0,15)}</span>
+                    {competence.slice(15)}
+                  </>
+                }
+                {
+                  index === 1 &&
+                  <>
+                    <span className="strong">{competence.slice(0,3)} </span><br/>
+                    {competence.slice(5,25)}<br/>{competence.slice(25,40)}
+                  </>
+                }
+                {
+                  (index === 2 || index === 3) &&
+                  <span className="strong">{competence.slice(0)}</span>
+                }
+                {
+                  (index === 4 || index === 5 || index === 6 || index === 7 || index === 8 || index === 9) &&
+                  competence
+                }
+              </p>
             ))
           }
         </div>
