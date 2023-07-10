@@ -1,7 +1,11 @@
 import Proptypes from 'prop-types';
 import './parcours.scss';
+import { useState } from 'react';
 
 function Parcours({ formations, experiences, competences }) {
+
+  const [closing, setClosing] = useState(true);
+
   return (
     <main className="parcours-container">
       <div className="content-items">
@@ -46,6 +50,24 @@ function Parcours({ formations, experiences, competences }) {
           }
         </div>
       </div>
+      {
+        closing ? 
+        <div className="interets">
+          <div className="interets_content">
+            <p className="intitule">Centre d’interêt</p>
+            <p className="interet">vélo - foot</p>
+          </div>
+          <i className="fa-solid fa-xmark"
+            onClick={() => {setClosing(false)}}
+          />
+        </div>
+        :
+        <div className="close">
+          <i className="fa-solid fa-xmark"
+            onClick={() => {setClosing(true)}}
+        />
+        </div>
+      }
     </main>
   );
 }

@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 function Acceuil() {
 
-  const [progress, setProgress] = useState()
+  const [progress, setProgress] = useState();
   return (
     <main className="accueil-container">
       <div className="accueil-content">
