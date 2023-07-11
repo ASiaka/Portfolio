@@ -4,7 +4,7 @@ import './modalnav.scss';
 
 function ModalNav({ setToggleMenuBurger }) {
   return (
-    <div className="mobileNav">
+    <div className="mobileNav" onMouseLeave={() => {setToggleMenuBurger(true)}}>
       <ul className="modal-list">
         <li>
           <NavLink

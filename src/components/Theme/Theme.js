@@ -17,7 +17,7 @@ function Theme({ mode, setMode}) {
 
   return (
     <div className="theme-container">
-      <div className="theme-content">
+      <div className="theme-content" onMouseLeave={() => {setOpenSetting(true)}}>
         <div className="icon-setting" onClick={handleOpenSetting}>
           <i className="fa-solid fa-gear"/>
         </div>
