@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './projets.scss';
+import { ThemeContext } from '../../contexts';
 
 let value = 0;
 
@@ -42,34 +43,47 @@ function Projets() {
   ]
   console.log(myProjects);
 
-  useEffect(() => {
-    
-    const interval = setInterval(() => {
+  const interval = useEffect(() => {
 
+    setInterval(() => {
       next();
-      // console.log("interval");
-      // value += 1;
-      // if(value < 0 || value > myProjects.length -1) {
-      //   value = 0
-      // }
-      // setIndex(value)
     }, 3000)
+    // const interval = setInterval(() => {
+    //   next();
+    // }, 3000)
 
   }, [])
+
+  const [view, setView] = useState();
+
+  // THEMES
+  const themeTools = useContext(ThemeContext);
+  const themeContext = themeTools.themeContext;
 
 
   return (
     <main className="projets-container">
-      <h1 className="projets-title">Projets</h1>
+      <h1 className="projets-title" style={{color: themeContext.theme}}>Projets</h1>
       <div className="projets-content">
         <div
           className="slide-left slides"
           onClick={() => prev()}
+          style={{backgroundColor: themeContext.theme}}
         >
           &#10094;
         </div>
 
-        <div className="projet">
+        <div className={`projet projet_${index} ${view}`}
+          onClick={() => {
+            console.log("cliqué");
+            if (view === "view") {
+              setView("")
+            } else {
+              setView("view")
+              clearInterval(1)
+            }
+          }}
+        >
           <h2 className="name">{myProjects[index].name}</h2>
           <p className="description">{myProjects[index].description}</p>
         </div>
@@ -77,6 +91,7 @@ function Projets() {
         <div
           className="slide-right slides"
           onClick={() => next()}
+          style={{backgroundColor: themeContext.theme}}
         >
           &#10095;
         </div>

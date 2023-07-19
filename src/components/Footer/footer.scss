@@ -4,10 +4,10 @@
   height: 7vh;
 
   .light {
-    background-color: $marine;
+    background-color: $blue;
   }
   .dark {
-    background-color: $marineDark;
+    // background-color: $marineDark;
   }
   .footer-content {
     // background-color: #222222;
@@ -24,7 +24,8 @@
     .icon {
 
       i {
-        color: gainsboro;
+        // color: gainsboro;
+        color: white;
         margin: 0 7px;
       }
     }

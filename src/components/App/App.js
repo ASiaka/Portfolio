@@ -12,26 +12,54 @@ import Error from '../Error/Error';
 
 import parcoursData from '../../data/data';
 import './app.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-// == Composant
+import { ThemeContext, ModeContext } from '../../contexts';
+import { themeMode } from '../Theme/themeMode';
+
+// == Composant 
 function App() {
   console.log(parcoursData);
-  const [mode, setMode] = useState('light');
-  console.log(mode);
+  // const [mode, setMode] = useState('light');
+
+  const themes = themeMode.theme;
+  const themeChanger = {"theme" : "#0C2F40", "theme10" : "#0C2F4010", "theme30" : "#0C2F4030"};
+
+  const [themeContext, setThemeContext] = useState(themeChanger);
+
+  function handleThemeChange(theme, theme10, theme30) {
+    themeChanger.theme = theme;
+    themeChanger.theme10 = theme10;
+    themeChanger.theme30 = theme30;
+    
+    return themeChanger
+  }
+  
+  console.log(themes, themeChanger, handleThemeChange);
+
+  useEffect(() => {
+
+    document.querySelector("body").style.backgroundColor = themeContext.theme10;
+
+  },[themeContext]);
+
   return (
-    <div className="app">
-      <Nav />
-      <Theme mode={mode} setMode={setMode} />
-      <Routes>
-        <Route path="/" element={<Accueil />} />
-        <Route path="/parcours" element={<Parcours {...parcoursData} />} />
-        <Route path="/projets" element={<Projets />} />
-        <Route path="/contact" element={<Contact mode={mode} />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer mode={mode} />
-    </div>
+    <ThemeContext.Provider value={{themes, themeChanger,handleThemeChange, themeContext, setThemeContext}}>
+      {/* <ModeContext.Provider value={{modeContext, setModeContext}}> */}
+      <div className="app">
+        <Nav />
+        <Theme themes={themes} />
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/parcours" element={<Parcours {...parcoursData} />} />
+          <Route path="/projets" element={<Projets />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </div>
+      {/* </ModeContext.Provider> */}
+    </ThemeContext.Provider>
   );
 }
 

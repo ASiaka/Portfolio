@@ -1,14 +1,18 @@
-import Proptypes from 'prop-types';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './contact.scss';
+import { ThemeContext } from '../../contexts';
 
-function Contact({mode}) {
+function Contact() {
+
+  // THEMES
+  const themeTools = useContext(ThemeContext);
+  const themeContext = themeTools.themeContext;
+
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
   const [mail, setMail] = useState('');
   const [sujet, setSujet] = useState('');
   const [message, setMessage] = useState('');
-
 
   function handleChangeNom(event) {
     setNom(event.currentTarget.value.trim());
@@ -44,7 +48,7 @@ function Contact({mode}) {
 
   return (
     <main className="contact-container">
-      <h1 className="contact-title">Contact</h1>
+      <h1 className="contact-title" style={{color: themeContext.theme}}>Contact</h1>
       <div className="contact-content">
         <form 
           className="contact-form"
@@ -58,8 +62,7 @@ function Contact({mode}) {
             value={nom}
             onChange={handleChangeNom}
           />
-          <input
-            type="text"
+          <input type="text"
             name="prenom"
             placeholder="Prenom"
             className="contact-input"
@@ -83,8 +86,7 @@ function Contact({mode}) {
             value={sujet}
             onChange={handleChangeSujet}
           />
-          <textarea
-            name="message"
+          <textarea name="message"
             placeholder="Message"
             className="contact-input"
             required
@@ -92,15 +94,15 @@ function Contact({mode}) {
             onChange={handleChangeMessage}
           />
           <button type="submit"
-            name="envoyer" className={`contact-input ${mode}`} id="contact-button">Envoyer</button>
+            name="envoyer" className="contact-input" id="contact-button"
+            style={{backgroundColor: themeContext.theme}}
+          >
+            Envoyer
+          </button>
         </form>
       </div>
     </main>
   );
-}
-
-Contact.propTypes = {
-  mode: Proptypes.string.isRequired,
 }
 
 export default Contact;

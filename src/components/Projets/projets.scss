@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 .projets-container {
   display: flex;
   justify-content: center;
@@ -24,6 +26,7 @@
       width: 30px;
       height: 50px;
       background-color: rgba(0, 0, 0, 0.1);
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -37,6 +40,32 @@
 
     .projet {
       text-align: center;
+      width: 60%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: gainsboro;
+
+      &_0 {
+        background-color: $blue;
+      }
+      &_1 {
+        background-color: $green;
+      }
+      &_2 {
+        background-color: $red;
+      }
+    }
+    .view {
+      position: fixed;
+      top:  2.5%;
+      left: 2.5%;
+      width: 95%;
+      height: 95%;
+      z-index: 1;
     }
   }
 }

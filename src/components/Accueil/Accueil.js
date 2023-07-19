@@ -7,17 +7,23 @@ import react from "../../assets/img/react.svg";
 import php from "../../assets/img/php.svg";
 import symfony from "../../assets/img/symfony.svg";
 import laravel from "../../assets/img/laravel.svg";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../contexts';
 
 function Acceuil() {
 
   const [progress, setProgress] = useState();
+
+    // THEMES
+    const themeTools = useContext(ThemeContext);
+    const themeContext = themeTools.themeContext;
+
   return (
     <main className="accueil-container">
       <div className="accueil-content">
         <div className="accueil-title">
-          <h1>Développeur web</h1>
-          <h2>Spécialisé <span>React</span></h2>
+          <h1 style={{color: themeContext.theme30}}>Développeur web</h1>
+          <h2 style={{color: themeContext.theme30}}>Spécialisé <span>React</span></h2>
         </div>
         <div className="icon-language">
           <img src={html} alt="html" className="icons html"
@@ -85,8 +91,8 @@ function Acceuil() {
             }}
           />
         </div>
-        <div id="progress_bloc"><div className={progress}></div></div>
         <p className="slogan">DevIn<span>Progress</span></p>
+        <div id="progress_bloc"><div className={progress} style={{backgroundColor: themeContext.theme30}}></div></div>
       </div>
     </main>
   );

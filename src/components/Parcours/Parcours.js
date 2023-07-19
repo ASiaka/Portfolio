@@ -1,10 +1,15 @@
 import Proptypes from 'prop-types';
 import './parcours.scss';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../contexts';
 
 function Parcours({ formations, experiences, competences }) {
 
   const [closing, setClosing] = useState(true);
+
+  // THEMES
+  const themeTools = useContext(ThemeContext);
+  const themeContext = themeTools.themeContext;
 
   return (
     <main className="parcours-container">
@@ -12,14 +17,26 @@ function Parcours({ formations, experiences, competences }) {
         <div className="items">
           <div className="titles">
             <div className="title">
-              <h1 className="title-one">ALTERNANCE</h1>
-              <h1 className="title-two">Développeur Web</h1>
+              <h1 className="title-one"
+                style={{color: themeContext.theme}}
+              >
+                ALTERNANCE
+              </h1>
+              <h1 className="title-two"
+                style={{color: themeContext.theme, borderTopColor: themeContext.theme}}
+              >
+                Développeur Web
+              </h1>
             </div>
           </div>
-          <h3 className="items-title">COMPETENCES</h3>
+          <h3 className="items-title"
+            style={{backgroundColor: themeContext.theme}}
+          >
+            COMPETENCES
+          </h3>
           {
             competences.map((competence, index) => (
-              <p className="competences" key={index}>
+              <p className="competences" key={index} style={{color: themeContext.theme}}>
                 {
                   index === 0 &&
                   <>
@@ -49,25 +66,33 @@ function Parcours({ formations, experiences, competences }) {
       </div>
       <div className="content-parcours">
         <div className="parcours">
-          <h3 className="parcours-title">FORMATIONS</h3>
+          <h3 className="parcours-title"
+            style={{backgroundColor: themeContext.theme}}
+          >
+            FORMATIONS
+          </h3>
           {
             formations.map((formation, index) => (
-              <div className="parcours-card" key={index}>
+              <div className="parcours-card" key={index} style={{color: themeContext.theme}}>
                 <p className="intitule">{formation.intitule}</p>
                 <p className="organisme">{formation.organisme}</p>
-                <p className="periode">{formation.periode}</p>
+                <p className="periode" style={{opacity: "70%"}}>{formation.periode}</p>
               </div>
             ))
           }
         </div>
         <div className="parcours">
-          <h3 className="parcours-title">EPERIENCES</h3>
+          <h3 className="parcours-title"
+            style={{backgroundColor: themeContext.theme}}
+          >
+            EPERIENCES
+          </h3>
           {
             experiences.map((experience, index) => (
-              <div className={`parcours-card${index === 6 ? " nextCard" : ""}`} key={index}>
+              <div className={`parcours-card${index === 6 ? " nextCard" : ""}`} key={index} style={{color: themeContext.theme}}>
                 <p className="intitule">{experience.intitule}</p>
                 <p className="organisme">{experience.organisme}</p>
-                <p className="periode">{experience.periode}</p>
+                <p className="periode" style={{opacity: "70%"}}>{experience.periode}</p>
               </div>
             ))
           }
@@ -77,8 +102,8 @@ function Parcours({ formations, experiences, competences }) {
         closing ? 
         <div className="interets">
           <div className="interets_content">
-            <p className="intitule">Centre d’interêt</p>
-            <p className="interet">vélo - foot</p>
+            <p className="intitule" style={{color: themeContext.theme}}>Centre d’interêt</p>
+            <p className="interet" style={{color: themeContext.theme, opacity: "70%"}}>vélo - foot</p>
           </div>
           <i className="fa-solid fa-xmark"
             onClick={() => {setClosing(false)}}
