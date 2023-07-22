@@ -16,6 +16,9 @@ function Nav() {
   const themeTools = useContext(ThemeContext);
   const themeContext = themeTools.themeContext;
 
+  const mode = themeTools.mode;
+  const handleModeChange = themeTools.handleModeChange;
+
   function logoTheme() {
     if (themeContext.theme === "#0C2F40") {
       return "baseThemeLogo"
@@ -33,7 +36,9 @@ function Nav() {
 
   return (
     <div className="nav-container">
-      <nav className="nav-content">
+      <nav className="nav-content"
+        id={mode ? handleModeChange() : "light"}
+      >
         <div className="nav">
           {/* <a href="/"><img className="nav-logo" src={logo} alt="logo ASia" /></a> */}
           <a href="/">

@@ -14,18 +14,18 @@ import parcoursData from '../../data/data';
 import './app.scss';
 import { useEffect, useState } from 'react';
 
-import { ThemeContext, ModeContext } from '../../contexts';
+import { ThemeContext } from '../../contexts';
 import { themeMode } from '../Theme/themeMode';
 
 // == Composant 
 function App() {
   console.log(parcoursData);
-  // const [mode, setMode] = useState('light');
 
   const themes = themeMode.theme;
-  const themeChanger = {"theme" : "#0C2F40", "theme10" : "#0C2F4010", "theme30" : "#0C2F4030"};
+  const themeChanger = {"theme" : themes.base, "theme10" : themes.base10, "theme30" : themes.base30};
 
   const [themeContext, setThemeContext] = useState(themeChanger);
+  const [mode, setMode] = useState(null);
 
   function handleThemeChange(theme, theme10, theme30) {
     themeChanger.theme = theme;
@@ -34,21 +34,50 @@ function App() {
     
     return themeChanger
   }
+
+  function handleModeChange() {
+    if (themeContext.theme === themes.base && mode === true) {
+      return "darkBase"
+    }
+    if (themeContext.theme === themes.blue && mode === true) {
+      return "darkBlue"
+    }
+    if (themeContext.theme === themes.green && mode === true) {
+      return "darkGreen"
+    }
+    if (themeContext.theme === themes.red && mode === true) {
+      return "darkRed"
+    }
+  }
   
-  console.log(themes, themeChanger, handleThemeChange);
+  console.log(themeContext);
 
   useEffect(() => {
 
     document.querySelector("body").style.backgroundColor = themeContext.theme10;
 
-  },[themeContext]);
+    if (themeContext.theme === themes.base && mode === true) {
+      document.querySelector("body").setAttribute("id", handleModeChange())
+    }
+    else if (themeContext.theme === themes.blue && mode === true) {
+      document.querySelector("body").setAttribute("id", handleModeChange())
+    }
+    else if (themeContext.theme === themes.green && mode === true) {
+      document.querySelector("body").setAttribute("id", handleModeChange())
+    }
+    else if (themeContext.theme === themes.red && mode === true) {
+      document.querySelector("body").setAttribute("id", handleModeChange())
+    } else {
+      document.querySelector("body").setAttribute("id", "light")
+    }
+
+  }, [themeContext, mode, themes.base, themes.blue, themes.blueDark, themes.green, themes.greenDark, themes.red, themes.redDark, handleModeChange]);
 
   return (
-    <ThemeContext.Provider value={{themes, themeChanger,handleThemeChange, themeContext, setThemeContext}}>
-      {/* <ModeContext.Provider value={{modeContext, setModeContext}}> */}
+    <ThemeContext.Provider value={{themes, themeChanger,handleThemeChange, themeContext, setThemeContext, mode, setMode, handleModeChange}}>
       <div className="app">
         <Nav />
-        <Theme themes={themes} />
+        <Theme />
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/parcours" element={<Parcours {...parcoursData} />} />
@@ -58,7 +87,6 @@ function App() {
         </Routes>
         <Footer />
       </div>
-      {/* </ModeContext.Provider> */}
     </ThemeContext.Provider>
   );
 }

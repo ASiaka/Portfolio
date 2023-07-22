@@ -1,8 +1,49 @@
 @use 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import 'vars';
+
+
+#darkBase {
+  background-color: #0B162C !important;
+  color: white !important;
+}
+#darkBlue {
+  background-color: #11151D !important;
+  color: white;
+}
+#darkGreen {
+  background-color: #242423 !important;
+  color: white !important;
+}
+#darkRed {
+  background-color: #1E0F1C !important;
+  color: white !important;
+}
+
+// #clr_darkBase {
+//   background-color: #11151D !important;
+//   color: white !important;
+// }
+// #clr_darkBlue {
+//   background-color: #11151D !important;
+//   color: white;
+// }
+// #clr_darkGreen {
+//   background-color: #242423 !important;
+//   color: gainsboro !important;
+// }
+// #clr_darkRed {
+//   background-color: #1E0F1C !important;
+//   color: gainsboro !important;
+// }
+
+.borderFooter {
+  border-top: 1px gainsboro solid;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+  
   // background-color: $gray;
   // background-color: #F9F9F9;
 //   margin: 0;
