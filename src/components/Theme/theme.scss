@@ -36,11 +36,6 @@
             }
         }
       }
-    
-      // &:hover {
-      //   background-color: #222222;
-      //   color: white;
-      // }
     }
   
     .theme-setting {
@@ -74,15 +69,11 @@
       .mode {
         .btn-mode {
           margin: 10px 5px;
+          padding: 3px 7px;
           border-radius: 5px;
-        }
-        .dark {
-          color: white;
-          background-color: black;
-        }
-        .light {
-          color: black;
-          background-color: white;          
+          border: none;
+          color: $gray;
+          background-color: $gray;
         }
       }
     }

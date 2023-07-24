@@ -4,41 +4,20 @@
 
 
 #darkBase {
-  background-color: #0B162C !important;
-  color: white !important;
+  background-color: $baseDark !important;
+  color: $gray !important;
 }
 #darkBlue {
-  background-color: #11151D !important;
-  color: white;
+  background-color: $blueDark !important;
+  color: $gray;
 }
 #darkGreen {
-  background-color: #242423 !important;
-  color: white !important;
+  background-color: $greenDark !important;
+  color: $gray !important;
 }
 #darkRed {
-  background-color: #1E0F1C !important;
-  color: white !important;
-}
-
-// #clr_darkBase {
-//   background-color: #11151D !important;
-//   color: white !important;
-// }
-// #clr_darkBlue {
-//   background-color: #11151D !important;
-//   color: white;
-// }
-// #clr_darkGreen {
-//   background-color: #242423 !important;
-//   color: gainsboro !important;
-// }
-// #clr_darkRed {
-//   background-color: #1E0F1C !important;
-//   color: gainsboro !important;
-// }
-
-.borderFooter {
-  border-top: 1px gainsboro solid;
+  background-color: $redDark !important;
+  color: $gray !important;
 }
 
 body {

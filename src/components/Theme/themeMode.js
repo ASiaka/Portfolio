@@ -15,9 +15,12 @@ export const themeMode = {
     green30: "#354E5230",
     red30: "#7C4C5330",
 
+    baseDark: "#0B162C",
     blueDark: "#11151D",
     greenDark: "#242423",
-    redDark: "#1E0F1C"
+    redDark: "#1E0F1C",
+
+    gray: "#F5F5F5"
   },
   mode: {
     light: "light",

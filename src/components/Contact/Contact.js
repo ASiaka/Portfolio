@@ -7,6 +7,10 @@ function Contact() {
   // THEMES
   const themeTools = useContext(ThemeContext);
   const themeContext = themeTools.themeContext;
+  
+  const mode = themeTools.mode;
+
+  const themes = themeTools.themes;
 
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
@@ -48,7 +52,7 @@ function Contact() {
 
   return (
     <main className="contact-container">
-      <h1 className="contact-title" style={{color: themeContext.theme}}>Contact</h1>
+      <h1 className="contact-title" style={{color: mode ? themes.gray : themeContext.theme}}>Contact</h1>
       <div className="contact-content">
         <form 
           className="contact-form"
@@ -61,6 +65,7 @@ function Contact() {
             required
             value={nom}
             onChange={handleChangeNom}
+            style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
           />
           <input type="text"
             name="prenom"
@@ -69,6 +74,7 @@ function Contact() {
             required
             value={prenom}
             onChange={handleChangePrenom}
+            style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
           />
           <input type="email"
             name="mail"
@@ -77,6 +83,7 @@ function Contact() {
             required
             value={mail}
             onChange={handleChangeMail}
+            style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
           />
           <input type="text"
             name="sujet"
@@ -85,6 +92,7 @@ function Contact() {
             required
             value={sujet}
             onChange={handleChangeSujet}
+            style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
           />
           <textarea name="message"
             placeholder="Message"
@@ -92,10 +100,11 @@ function Contact() {
             required
             value={message}
             onChange={handleChangeMessage}
+            style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
           />
           <button type="submit"
             name="envoyer" className="contact-input" id="contact-button"
-            style={{backgroundColor: themeContext.theme}}
+            style={{backgroundColor: mode ? themeContext.theme30 : themeContext.theme}}
           >
             Envoyer
           </button>

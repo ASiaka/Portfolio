@@ -21,7 +21,7 @@
       width: 70%;
 
       .contact-input {
-        border: 1px solid #e5e5e5;
+        border: 1px solid gainsboro;
         border-radius: 5px;
         // outline: 0;
         width: 100%;
@@ -29,14 +29,7 @@
         margin-bottom: 20px;
       }
 
-      .light {
-        background-color: $blue;
-      }
-      .dark {
-        // background-color: $marineDark;
-      }
       #contact-button {
-        // background-color: $marine;
         color: gainsboro;
       }
     }

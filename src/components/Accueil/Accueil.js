@@ -18,12 +18,16 @@ function Acceuil() {
     const themeTools = useContext(ThemeContext);
     const themeContext = themeTools.themeContext;
 
+    const mode = themeTools.mode;
+  
+    const themes = themeTools.themes;
+
   return (
     <main className="accueil-container">
       <div className="accueil-content">
         <div className="accueil-title">
-          <h1 style={{color: themeContext.theme30}}>Développeur web</h1>
-          <h2 style={{color: themeContext.theme30}}>Spécialisé <span>React</span></h2>
+          <h1 style={{color: mode ? themes.gray : themeContext.theme30}}>Développeur web</h1>
+          <h2 style={{color: mode ? themes.gray : themeContext.theme30}}>Spécialisé <span>React</span></h2>
         </div>
         <div className="icon-language">
           <img src={html} alt="html" className="icons html"
@@ -92,7 +96,7 @@ function Acceuil() {
           />
         </div>
         <p className="slogan">DevIn<span>Progress</span></p>
-        <div id="progress_bloc"><div className={progress} style={{backgroundColor: themeContext.theme30}}></div></div>
+        <div id="progress_bloc"><div className={progress} style={{backgroundColor: mode ? themes.gray : themeContext.theme30}}></div></div>
       </div>
     </main>
   );

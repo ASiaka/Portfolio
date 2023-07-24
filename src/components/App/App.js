@@ -21,16 +21,18 @@ import { themeMode } from '../Theme/themeMode';
 function App() {
   console.log(parcoursData);
 
+  //THEMES
   const themes = themeMode.theme;
-  const themeChanger = {"theme" : themes.base, "theme10" : themes.base10, "theme30" : themes.base30};
+  const themeChanger = {"theme" : themes.base, "theme10" : themes.base10, "theme30" : themes.base30, "dark" : themes.baseDark};
 
   const [themeContext, setThemeContext] = useState(themeChanger);
   const [mode, setMode] = useState(null);
 
-  function handleThemeChange(theme, theme10, theme30) {
+  function handleThemeChange(theme, theme10, theme30, dark) {
     themeChanger.theme = theme;
     themeChanger.theme10 = theme10;
     themeChanger.theme30 = theme30;
+    themeChanger.dark = dark;
     
     return themeChanger
   }
@@ -55,26 +57,20 @@ function App() {
   useEffect(() => {
 
     document.querySelector("body").style.backgroundColor = themeContext.theme10;
-
-    if (themeContext.theme === themes.base && mode === true) {
-      document.querySelector("body").setAttribute("id", handleModeChange())
-    }
-    else if (themeContext.theme === themes.blue && mode === true) {
-      document.querySelector("body").setAttribute("id", handleModeChange())
-    }
-    else if (themeContext.theme === themes.green && mode === true) {
-      document.querySelector("body").setAttribute("id", handleModeChange())
-    }
-    else if (themeContext.theme === themes.red && mode === true) {
-      document.querySelector("body").setAttribute("id", handleModeChange())
+    if (mode === true) {
+      document.querySelector("body").setAttribute("id", handleModeChange());
     } else {
-      document.querySelector("body").setAttribute("id", "light")
+      document.querySelector("body").setAttribute("id", "light");
     }
 
-  }, [themeContext, mode, themes.base, themes.blue, themes.blueDark, themes.green, themes.greenDark, themes.red, themes.redDark, handleModeChange]);
+  });
 
   return (
-    <ThemeContext.Provider value={{themes, themeChanger,handleThemeChange, themeContext, setThemeContext, mode, setMode, handleModeChange}}>
+    <ThemeContext.Provider value={{
+        themes, themeChanger,handleThemeChange,
+        themeContext, setThemeContext,
+        mode, setMode, handleModeChange
+      }}>
       <div className="app">
         <Nav />
         <Theme />

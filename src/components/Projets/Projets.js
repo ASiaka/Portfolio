@@ -59,16 +59,20 @@ function Projets() {
   // THEMES
   const themeTools = useContext(ThemeContext);
   const themeContext = themeTools.themeContext;
+  
+  const mode = themeTools.mode;
+
+  const themes = themeTools.themes;
 
 
   return (
     <main className="projets-container">
-      <h1 className="projets-title" style={{color: themeContext.theme}}>Projets</h1>
-      <div className="projets-content">
+      <h1 className="projets-title" style={{color: mode ? themeTools.gray : themeContext.theme}}>Projets</h1>
+      <div className="projets-content" style={{backgroundColor: mode ? themeContext.theme10 : themes.gray, boxShadow: mode ? `${themeContext.theme} 2px 2px 2px 2px` : `gainsboro 1px 1px 1px 1px`}}>
         <div
           className="slide-left slides"
           onClick={() => prev()}
-          style={{backgroundColor: themeContext.theme}}
+          style={{backgroundColor: mode ? themeContext.dark : themeContext.theme}}
         >
           &#10094;
         </div>
@@ -91,7 +95,7 @@ function Projets() {
         <div
           className="slide-right slides"
           onClick={() => next()}
-          style={{backgroundColor: themeContext.theme}}
+          style={{backgroundColor: mode ? themeContext.dark : themeContext.theme}}
         >
           &#10095;
         </div>

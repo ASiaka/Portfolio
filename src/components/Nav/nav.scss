@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 .nav-container {
     height: 10vh;
 
@@ -23,37 +25,26 @@
             
             &-logo {
                 // max-width: 40px;
-                width: 40px;
+                width: 30px;
             }
-            .baseThemeLogo {
-                filter: invert(13%) sepia(18%) saturate(3543%) hue-rotate(163deg) brightness(91%) contrast(91%);
-            }
-            .blueThemeLogo {
-                filter: invert(22%) sepia(15%) saturate(1389%) hue-rotate(166deg) brightness(95%) contrast(86%);
-            }
-            .greenThemeLogo {
-                filter: invert(29%) sepia(10%) saturate(1142%) hue-rotate(140deg) brightness(89%) contrast(92%); 
-            }
-            .redThemeLogo {
-                filter: invert(34%) sepia(17%) saturate(920%) hue-rotate(302deg) brightness(93%) contrast(94%);
-            }
+
             &-list {
                 display: flex;
-                color: gray;
+                color: $gray;
                 
                 li {
                     margin: 10px;
                     position: relative;
 
                     :hover {
-                        color: black;
+                        color: gainsboro;
                     }
                 }
                 .active::after {
                     content: "";
-                    height: 5px;
+                    height: 2px;
                     width: 100%;
-                    background-color: black;
+                    background-color: gainsboro;
                     position: absolute;
                     top: 25px;
                     left: 0;
@@ -61,6 +52,22 @@
 
                 @media screen and (max-width: 800px) {
                     display: none;
+                }
+
+                .darkHover {
+                    :hover {
+                        color: gainsboro;
+                    }
+
+                    .active::after {
+                        content: "";
+                        height: 2px;
+                        width: 100%;
+                        background-color: $gray;
+                        position: absolute;
+                        top: 25px;
+                        left: 0;
+                    }
                 }
             }
 
@@ -72,7 +79,7 @@
                 }
             }
             .fa-xmark {
-                color: gray;
+                color: $gray;
 
                 &:hover {
                     color: black;

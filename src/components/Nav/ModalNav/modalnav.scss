@@ -1,3 +1,5 @@
+@import '../../../styles/vars';
+
 .mobileNav {
   background-color: white;
   width: 100%;
@@ -10,7 +12,7 @@
   box-shadow: 1px 1px 1px 1px gainsboro;
 
   .modal-list {
-    color: gray;
+    color: $gray;
     position: relative;
 
     li {
@@ -18,7 +20,7 @@
       position: relative;
 
       :hover {
-          color: black;
+          color: gainsboro;
       }
     }
   }
