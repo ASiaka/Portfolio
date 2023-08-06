@@ -1,6 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
 import './projets.scss';
 import { ThemeContext } from '../../contexts';
+import PFW from './PFW.jpg';
+import PFT from './PFT.jpg';
+import PFM from './PFM.jpg';
+import MMRW from './MMRW.jpg';
+import MMRT from './MMRT.jpg';
+import MMRM from './MMRM.jpg';
+import APW from './APW.jpg';
+import APT from './APT.jpg';
+import APM from './APM.jpg';
 
 let value = 0;
 
@@ -29,16 +38,19 @@ function Projets() {
 
   const myProjects = [
     {
-      name: 'C.carré',
-      description: 'Site d\'organisation'
+      name: 'AS',
+      description: 'Mon Portfolio',
+      img: ["PFW", "PFT", "PFM"]
     },
     {
       name: 'Mémots',
-      description: 'Site pour réviser son vocabulaire'
+      description: 'Site pour réviser son vocabulaire',
+      img: ["MMRW", "MMRT", "MMRM"]
     },
     {
       name: 'AP',
-      description: 'Site d\'un entrepeneur graphiste'
+      description: 'Site d\'un entrepeneur graphiste',
+      img: ["APW", "APT", "APM"]
     }
   ]
   console.log(myProjects);
@@ -87,9 +99,11 @@ function Projets() {
               clearInterval(1)
             }
           }}
+          style={{border: `5px solid ${themeContext.theme}`}}
         >
-          <h2 className="name">{myProjects[index].name}</h2>
-          <p className="description">{myProjects[index].description}</p>
+          <img src={index === 0 ? PFW : index === 1 ? MMRW : index === 2 && APW} alt={`image_${myProjects[index].name}`} className="img_display"/>
+          {/* <h2 className="name">{myProjects[index].name}</h2>
+          <p className="description">{myProjects[index].description}</p> */}
         </div>
 
         <div

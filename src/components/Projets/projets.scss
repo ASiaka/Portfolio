@@ -41,30 +41,36 @@
     .projet {
       text-align: center;
       width: 60%;
-      height: 80%;
+      // height: 80%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       font-weight: bold;
       color: gainsboro;
+      border: 3px solid black;
 
-      &_0 {
-        background-color: $blue;
+      .img_display {
+        width: 100%;
       }
-      &_1 {
-        background-color: $green;
-      }
-      &_2 {
-        background-color: $red;
-      }
+
+      // &_0 {
+      //   background-color: $blue;
+      // }
+      // &_1 {
+      //   background-color: $green;
+      // }
+      // &_2 {
+      //   background-color: $red;
+      // }
     }
     .view {
-      position: fixed;
-      top:  2.5%;
-      left: 2.5%;
-      width: 95%;
-      height: 95%;
+      // position: fixed;
+      // top:  2.5%;
+      // left: 2.5%;
+      scale: 1.5;
+      // width: 95%;
+      // height: 95%;
       z-index: 1;
     }
   }
