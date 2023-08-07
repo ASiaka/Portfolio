@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 100%;
+  height: calc(100vh - 150px);
 
   @media (max-width: 400px) {
     font-size: 14px;
@@ -13,13 +13,8 @@
     font-size: 11px;
   }
   
-  @media screen and (max-width: 793px) {
-    // flex-direction: row;
-  }
   .content-items {
     width: 20%;
-    // height: 100%;
-    // background-color: white;
     flex: 1;
 
     min-width: 25rem;
@@ -30,10 +25,6 @@
     @media (max-width: 345px) {
       min-width: 15rem;
     }
-
-    // @media screen and (max-width: 793px) {
-    //   // order: 1;
-    // }
 
     .titles {
       margin: 25px 0;
@@ -53,7 +44,6 @@
           padding: 7px 10px;
           width: fit-content;
           margin: 0 auto 0 0;
-          // border-bottom: 1px black solid;
         }
   
         &-two {
@@ -109,6 +99,13 @@
     flex: 2;
     background-color: white;
 
+    @media (min-height: 745px) {
+      margin-bottom: 65px;
+    }
+    @media (min-width:1189px) {
+      margin-bottom: 65px;
+    }
+
     .parcours {
       margin: 20px 10px;
 
@@ -159,16 +156,11 @@
         .intitule {
           font-weight: 500;
         }
-        // .organisme {
 
-        // }
-        .periode {
-          // color: gray;
-        }
       }
       .nextCard {
         @media (max-width: 1188px) {
-          margin-bottom: 7vh;
+          margin-bottom: 65px;
         }
       }
     }
@@ -184,7 +176,7 @@
     background-color: white;
     position: fixed;
     right: 15px;
-    bottom: 7vh;
+    bottom: 65px;
     display: flex;
     justify-content: space-between;
     opacity: 70%;

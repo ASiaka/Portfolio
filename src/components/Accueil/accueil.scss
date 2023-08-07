@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: calc(100vh - 150px);
 
   .accueil-content {
     display: flex;
@@ -95,7 +95,7 @@
   .slogan {
     color: rgb(205, 205, 205);
     position: fixed;
-    bottom: 12vh;
+    bottom: 100px;
 
     @media (max-width: 300px) {
       font-size: 11px;
@@ -108,7 +108,7 @@
 
   #progress_bloc {
     position: fixed;
-    bottom: 8.5vh;
+    bottom: 80px;
     width: 200px;
     height: 7px;
     padding: 1px;

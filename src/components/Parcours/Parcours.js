@@ -89,7 +89,7 @@ function Parcours({ formations, experiences, competences }) {
           <h3 className="parcours-title"
             style={{backgroundColor: mode ? themeContext.dark : themeContext.theme, boxShadow: mode ? "none" : `gainsboro 1px 1px 1px 1px`, border: `${themes.gray} 1px solid`}}
           >
-            EPERIENCES
+            EXPERIENCES
           </h3>
           {
             experiences.map((experience, index) => (

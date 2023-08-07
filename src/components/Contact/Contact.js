@@ -15,7 +15,6 @@ function Contact() {
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
   const [mail, setMail] = useState('');
-  const [sujet, setSujet] = useState('');
   const [message, setMessage] = useState('');
 
   function handleChangeNom(event) {
@@ -26,9 +25,6 @@ function Contact() {
   };
   function handleChangeMail(event) {
     setMail(event.currentTarget.value.trim());
-  };
-  function handleChangeSujet(event) {
-    setSujet(event.currentTarget.value.trim());
   };
   function handleChangeMessage(event) {
     setMessage(event.currentTarget.value.trim());
@@ -83,15 +79,6 @@ function Contact() {
             required
             value={mail}
             onChange={handleChangeMail}
-            style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
-          />
-          <input type="text"
-            name="sujet"
-            placeholder="Sujet"
-            className="contact-input"
-            required
-            value={sujet}
-            onChange={handleChangeSujet}
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
           />
           <textarea name="message"
