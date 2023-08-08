@@ -19,7 +19,6 @@ import { themeMode } from '../Theme/themeMode';
 
 // == Composant 
 function App() {
-  console.log(parcoursData);
 
   //THEMES
   const themes = themeMode.theme;
@@ -51,8 +50,6 @@ function App() {
       return "darkRed"
     }
   }
-  
-  console.log(themeContext);
 
   useEffect(() => {
 

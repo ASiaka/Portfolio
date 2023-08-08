@@ -20,10 +20,6 @@
     .contact-form {
       width: 70%;
 
-      @media (min-height: 580px) {
-        margin-bottom: 80px;
-      }
-
       .contact-input {
         border: 1px solid gainsboro;
         border-radius: 5px;

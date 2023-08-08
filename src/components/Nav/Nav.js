@@ -48,7 +48,7 @@ function Nav() {
           {!toggleMenuBurger && <ModalNav setToggleMenuBurger={setToggleMenuBurger} />}
 
           <ul className="nav-list" style={{color: mode ? themes.gray : themeContext.theme}}>
-            <li className={mode ? "darkHover" : "light"}><NavLink to="/">Acceuil</NavLink></li>
+            <li className={mode ? "darkHover" : "light"}><NavLink to="/">Accueil</NavLink></li>
             {/* <li className={mode ? "darkHover" : "light"}><NavLink to="">A propos</NavLink></li> */}
             <li className={mode ? "darkHover" : "light"}><NavLink to="/parcours">Parcours</NavLink></li>
             <li className={mode ? "darkHover" : "light"}><NavLink to="/projets">Projets</NavLink></li>
@@ -58,7 +58,6 @@ function Nav() {
             <i
               className={toggleMenuBurger ? 'fa-solid fa-bars fa-1x' : 'fa-solid fa-xmark fa-1x'}
               onClick={() => {
-                console.log('Menu cliqué');
                 return (
                   toggleMenuBurger ? setToggleMenuBurger(false) : setToggleMenuBurger(true)
                 );

@@ -30,18 +30,16 @@ function Contact() {
     setMessage(event.currentTarget.value.trim());
   };
 
-  console.log(nom);
-
   function regexTest(e) {
     e.preventDefault();
-    console.log("regexTest");
+    // console.log("regexTest");
     const namesValue = document.querySelector('.nom');
     // let regexEmail = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
     let regexNames = /^([a-zA-Z]{1,})([-']?[a-zA-Z]+)\s([a-zA-Z]+)$/;
     let regexEmail = /^([a-zA-Z0-9_\-.]{2,})@([a-zA-Z]{3,7})\.([a-zA-Z]{2,5})$/;
     
     if (!regexNames.test(namesValue)) {
-      console.log('nom invalide!');
+      // console.log('nom invalide!');
     }
   }
   // regexTest();
@@ -84,6 +82,7 @@ function Contact() {
           <textarea name="message"
             placeholder="Message"
             className="contact-input"
+            rows="5"
             required
             value={message}
             onChange={handleChangeMessage}

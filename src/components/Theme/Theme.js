@@ -13,7 +13,6 @@ function Theme() {
       setOpenSetting(true)
     }
   }
-  console.log(openSetting);
   
   // THEMES
   const themeTools = useContext(ThemeContext);
@@ -27,8 +26,6 @@ function Theme() {
   const mode = themeTools.mode;
   const setMode = themeTools.setMode;
   const handleModeChange = themeTools.handleModeChange;
-
-  console.log(themeContext, themes);
 
   return (
     <div className="theme-container" style={{color: themeContext.theme}}>
@@ -55,7 +52,6 @@ function Theme() {
             <button 
               className="btn-mode dark"
               onClick={() => {
-                console.log("Mode dark")
                 setMode(true);
               }}
               style={{backgroundColor: themeContext.theme}}
@@ -65,7 +61,6 @@ function Theme() {
             <button
               className="btn-mode light"
               onClick={() => {
-                console.log("Mode light")
                 setMode(false);
               }}
               style={{color: themeContext.theme}}

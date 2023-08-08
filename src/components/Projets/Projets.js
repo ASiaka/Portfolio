@@ -18,7 +18,6 @@ function Projets() {
 
   function next() {
     value += 1;
-    console.log(value);
     if(value === myProjects.length) {
       value = 0;
     }
@@ -27,14 +26,11 @@ function Projets() {
 
   function prev() {
     value -= 1;
-    console.log(value);
     if(value < 0) {
       value = myProjects.length -1;
     }
     setIndex(value)
   }
-  
-  console.log(value);
 
   const myProjects = [
     {
@@ -53,7 +49,6 @@ function Projets() {
       img: ["APW", "APT", "APM"]
     }
   ]
-  console.log(myProjects);
 
   const interval = useEffect(() => {
 
@@ -91,7 +86,6 @@ function Projets() {
 
         <div className={`projet projet_${index} ${view}`}
           onClick={() => {
-            console.log("cliqué");
             if (view === "view") {
               setView("")
             } else {

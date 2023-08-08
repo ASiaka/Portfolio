@@ -10,7 +10,7 @@ import laravel from "../../assets/img/laravel.svg";
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../../contexts';
 
-function Acceuil() {
+function Accueil() {
 
   const [progress, setProgress] = useState();
 
@@ -102,4 +102,4 @@ function Acceuil() {
   );
 }
 
-export default Acceuil;
+export default Accueil;
