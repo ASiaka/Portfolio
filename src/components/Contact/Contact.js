@@ -1,48 +1,77 @@
-import { useContext, useState } from 'react';
+import { useContext, useRef } from 'react';
 import './contact.scss';
 import { ThemeContext } from '../../contexts';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import emailjs from '@emailjs/browser';
+
+const schema = yup
+  .object({
+    nom: yup.string()
+      .min(3, '3 caractères min.')
+      .max(15, '15 caractères max.')
+      .required('Nom obligatoire'),
+    prenom: yup.string()
+      .min(3, '3 caractères min.')
+      .max(15, '15 caractères max.')
+      .required('Prénom obligatoire'),
+    mail: yup.string()
+      .email('Email invalide')
+      .required("Email obligatoire"),
+    message: yup.string()
+      .min(15, '15 caractères min')
+      .max(300, '300 caractères max')
+      .required('Message obligatoire'),
+  })
+  .required()
 
 function Contact() {
+
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_9xkv74r',
+      'template_j4bmokp',
+      form.current,
+      'h2JChoIcV98Vo9yBm')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+          }
+    );
+    e.target.reset();
+  };
 
   // THEMES
   const themeTools = useContext(ThemeContext);
   const themeContext = themeTools.themeContext;
-  
-  const mode = themeTools.mode;
 
+  const mode = themeTools.mode;
   const themes = themeTools.themes;
 
-  const [nom, setNom] = useState('');
-  const [prenom, setPrenom] = useState('');
-  const [mail, setMail] = useState('');
-  const [message, setMessage] = useState('');
-
-  function handleChangeNom(event) {
-    setNom(event.currentTarget.value.trim());
-  };
-  function handleChangePrenom(event) {
-    setPrenom(event.currentTarget.value.trim());
-  };
-  function handleChangeMail(event) {
-    setMail(event.currentTarget.value.trim());
-  };
-  function handleChangeMessage(event) {
-    setMessage(event.currentTarget.value.trim());
-  };
-
-  function regexTest(e) {
-    e.preventDefault();
-    // console.log("regexTest");
-    const namesValue = document.querySelector('.nom');
-    // let regexEmail = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
-    let regexNames = /^([a-zA-Z]{1,})([-']?[a-zA-Z]+)\s([a-zA-Z]+)$/;
-    let regexEmail = /^([a-zA-Z0-9_\-.]{2,})@([a-zA-Z]{3,7})\.([a-zA-Z]{2,5})$/;
-    
-    if (!regexNames.test(namesValue)) {
-      // console.log('nom invalide!');
-    }
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: {errors}
+  } = useForm({
+      resolver: yupResolver(schema),
+      defaultValues: {
+        nom: "",
+        prenom: "",
+        mail: "",
+        message: ""
+      }
+    });
+  const onSubmit = (data, e) => {
+    console.log(data);
+    sendEmail(e);
   }
-  // regexTest();
+  console.log(errors);
 
   return (
     <main className="contact-container">
@@ -50,43 +79,40 @@ function Contact() {
       <div className="contact-content">
         <form 
           className="contact-form"
-          onSubmit={regexTest}
+          ref={form}
+          onSubmit={handleSubmit(onSubmit)}
         >
+          {errors.nom && <p className="messageError">{errors.nom.message}</p>}
           <input type="text"
-            name="nom"
             placeholder="Nom"
             className="contact-input"
-            required
-            value={nom}
-            onChange={handleChangeNom}
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
+            // {...register("nom", { required: true, minLength: 3, maxLength: 100 })}
+            {...register("nom", errors)}
           />
+          {errors.prenom && <p className="messageError">{errors.prenom.message}</p>}
           <input type="text"
-            name="prenom"
             placeholder="Prenom"
             className="contact-input"
-            required
-            value={prenom}
-            onChange={handleChangePrenom}
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
+            // {...register("prenom", { required: true, minLength: 3, maxLength: 100 })}
+            {...register("prenom")}
           />
+          {errors.mail && <p className="messageError">{errors.mail.message}</p>}
           <input type="email"
-            name="mail"
             placeholder="Mail"
             className="contact-input"
-            required
-            value={mail}
-            onChange={handleChangeMail}
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
+            // {...register("mail", {required: true, pattern: /^\S+@\S+$/i})}
+            {...register("mail", {pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
           />
-          <textarea name="message"
+          {errors.message && <p className="messageError">{errors.message.message}</p>}
+          <textarea
             placeholder="Message"
             className="contact-input"
             rows="5"
-            required
-            value={message}
-            onChange={handleChangeMessage}
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
+            {...register("message", errors)}
           />
           <button type="submit"
             name="envoyer" className="contact-input" id="contact-button"
