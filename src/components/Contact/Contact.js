@@ -9,11 +9,11 @@ import emailjs from '@emailjs/browser';
 const schema = yup
   .object({
     nom: yup.string()
-      .min(3, '3 caractères min.')
-      .max(15, '15 caractères max.')
+      .min(3, '3 caractères min')
+      .max(15, '15 caractères max')
       .required('Nom obligatoire'),
     prenom: yup.string()
-      .min(3, '3 caractères min.')
+      .min(3, '3 caractères min')
       .max(15, '15 caractères max.')
       .required('Prénom obligatoire'),
     mail: yup.string()
@@ -82,31 +82,34 @@ function Contact() {
           ref={form}
           onSubmit={handleSubmit(onSubmit)}
         >
-          {errors.nom && <p className="messageError">{errors.nom.message}</p>}
+          <ul className="messageError">
+            {errors.nom && <li className="messageError">{errors.nom.message}</li>}
+            {errors.prenom && <li className="messageError">{errors.prenom.message}</li>}
+            {errors.mail && <li className="messageError">{errors.mail.message}</li>}
+            {errors.message && <li className="messageError">{errors.message.message}</li>}
+          </ul>
+          {/* {errors.nom && <p className="messageError">{errors.nom.message}</p>} */}
           <input type="text"
             placeholder="Nom"
             className="contact-input"
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
-            // {...register("nom", { required: true, minLength: 3, maxLength: 100 })}
             {...register("nom", errors)}
           />
-          {errors.prenom && <p className="messageError">{errors.prenom.message}</p>}
+          {/* {errors.prenom && <p className="messageError">{errors.prenom.message}</p>} */}
           <input type="text"
             placeholder="Prenom"
             className="contact-input"
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
-            // {...register("prenom", { required: true, minLength: 3, maxLength: 100 })}
             {...register("prenom")}
           />
-          {errors.mail && <p className="messageError">{errors.mail.message}</p>}
+          {/* {errors.mail && <p className="messageError">{errors.mail.message}</p>} */}
           <input type="email"
             placeholder="Mail"
             className="contact-input"
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
-            // {...register("mail", {required: true, pattern: /^\S+@\S+$/i})}
             {...register("mail", {pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
           />
-          {errors.message && <p className="messageError">{errors.message.message}</p>}
+          {/* {errors.message && <p className="messageError">{errors.message.message}</p>} */}
           <textarea
             placeholder="Message"
             className="contact-input"
