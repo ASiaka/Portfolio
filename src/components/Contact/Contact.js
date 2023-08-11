@@ -43,7 +43,6 @@ function Contact() {
             console.log(error.text);
           }
     );
-    e.target.reset();
   };
 
   // THEMES
@@ -56,20 +55,15 @@ function Contact() {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: {errors}
   } = useForm({
-      resolver: yupResolver(schema),
-      defaultValues: {
-        nom: "",
-        prenom: "",
-        mail: "",
-        message: ""
-      }
+      resolver: yupResolver(schema)
     });
   const onSubmit = (data, e) => {
     console.log(data);
     sendEmail(e);
+    reset();
   }
   console.log(errors);
 
@@ -82,12 +76,6 @@ function Contact() {
           ref={form}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <ul className="messageError">
-            {errors.nom && <li className="messageError">{errors.nom.message}</li>}
-            {errors.prenom && <li className="messageError">{errors.prenom.message}</li>}
-            {errors.mail && <li className="messageError">{errors.mail.message}</li>}
-            {errors.message && <li className="messageError">{errors.message.message}</li>}
-          </ul>
           {/* {errors.nom && <p className="messageError">{errors.nom.message}</p>} */}
           <input type="text"
             placeholder="Nom"
@@ -107,7 +95,7 @@ function Contact() {
             placeholder="Mail"
             className="contact-input"
             style={{backgroundColor: themeContext.theme10, color: mode ? themes.gray : themeContext.theme}}
-            {...register("mail", {pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
+            {...register("mail")}
           />
           {/* {errors.message && <p className="messageError">{errors.message.message}</p>} */}
           <textarea
@@ -123,6 +111,12 @@ function Contact() {
           >
             Envoyer
           </button>
+          <ul className="messageError">
+            {errors.nom && <li className="messageError">{errors.nom.message}</li>}
+            {errors.prenom && <li className="messageError">{errors.prenom.message}</li>}
+            {errors.mail && <li className="messageError">{errors.mail.message}</li>}
+            {errors.message && <li className="messageError">{errors.message.message}</li>}
+          </ul>
         </form>
       </div>
     </main>

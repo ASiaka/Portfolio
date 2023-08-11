@@ -29,7 +29,7 @@ function Nav() {
       >
         <div className="nav">
           {/* <a href="/"><img className="nav-logo" src={logo} alt="logo ASia" /></a> */}
-          <a href="/">
+          <NavLink to="/">
             {/* <img className={`nav-logo ${logoTheme()}`} src={logo} alt="logo ASia"/> */}
             <svg
               // id="Calque_1"
@@ -43,7 +43,7 @@ function Nav() {
                 fill={mode ? themes.gray : themeContext.theme}
               />
             </svg>
-          </a>
+          </NavLink>
 
           {!toggleMenuBurger && <ModalNav setToggleMenuBurger={setToggleMenuBurger} />}
 

@@ -14,23 +14,6 @@ import APM from './APM.jpg';
 let value = 0;
 
 function Projets() {
-  const [index, setIndex] = useState(value)
-
-  function next() {
-    value += 1;
-    if(value === myProjects.length) {
-      value = 0;
-    }
-    setIndex(value)
-  }
-
-  function prev() {
-    value -= 1;
-    if(value < 0) {
-      value = myProjects.length -1;
-    }
-    setIndex(value)
-  }
 
   const myProjects = [
     {
@@ -48,20 +31,33 @@ function Projets() {
       description: 'Site d\'un entrepeneur graphiste',
       img: ["APW", "APT", "APM"]
     }
-  ]
+  ];
+
+  const [index, setIndex] = useState(value);
+
+  function next() {
+    value += 1;
+    if(value === myProjects.length) {
+      value = 0;
+    }
+    setIndex(value)
+  };
+
+  function prev() {
+    value -= 1;
+    if(value < 0) {
+      value = myProjects.length -1;
+    }
+    setIndex(value)
+  };
 
   const interval = useEffect(() => {
 
     setInterval(() => {
       next();
     }, 3000)
-    // const interval = setInterval(() => {
-    //   next();
-    // }, 3000)
 
   }, [])
-
-  const [view, setView] = useState();
 
   // THEMES
   const themeTools = useContext(ThemeContext);
@@ -84,15 +80,7 @@ function Projets() {
           &#10094;
         </div>
 
-        <div className={`projet projet_${index} ${view}`}
-          onClick={() => {
-            if (view === "view") {
-              setView("")
-            } else {
-              setView("view")
-              clearInterval(1)
-            }
-          }}
+        <div className={`projet projet_${index}`}
           style={{border: `5px solid ${themeContext.theme}`}}
         >
           <img src={index === 0 ? PFW : index === 1 ? MMRW : index === 2 && APW} alt={`image_${myProjects[index].name}`} className="img_display"/>
