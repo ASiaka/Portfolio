@@ -2,14 +2,14 @@ import { useContext, useEffect, useState } from 'react';
 import './projets.scss';
 import { ThemeContext } from '../../contexts';
 import PFW from './PFW.jpg';
-import PFT from './PFT.jpg';
-import PFM from './PFM.jpg';
-import MMRW from './MMRW.jpg';
-import MMRT from './MMRT.jpg';
-import MMRM from './MMRM.jpg';
+// import PFT from './PFT.jpg';
+// import PFM from './PFM.jpg';
+import RHW from './RHW.jpg';
+// import RHT from './RHT.jpg';
+// import RHM from './RHM.jpg';
 import APW from './APW.jpg';
-import APT from './APT.jpg';
-import APM from './APM.jpg';
+// import APT from './APT.jpg';
+// import APM from './APM.jpg';
 
 let value = 0;
 
@@ -19,17 +19,20 @@ function Projets() {
     {
       name: 'AS',
       description: 'Mon Portfolio',
-      img: ["PFW", "PFT", "PFM"]
+      img: ["PFW", "PFT", "PFM"],
+      site: 'https://www.asiakadev.com'
     },
     {
-      name: 'Mémots',
+      name: 'RévisionHelp',
       description: 'Site pour réviser son vocabulaire',
-      img: ["MMRW", "MMRT", "MMRM"]
+      img: ["RHW", "RHT", "RHM"],
+      site: 'https://www.revisionhelp.fr'
     },
     {
       name: 'AP',
       description: 'Site d\'un entrepeneur graphiste',
-      img: ["APW", "APT", "APM"]
+      img: ["APW", "APT", "APM"],
+      site: '#'
     }
   ];
 
@@ -80,13 +83,13 @@ function Projets() {
           &#10094;
         </div>
 
-        <div className={`projet projet_${index}`}
+        <a href={myProjects[index].site} target={index !== 2 ? '_blank' : '_self'} rel='noreferrer' className={`projet projet_${index}`}
           style={{border: `5px solid ${themeContext.theme}`}}
         >
-          <img src={index === 0 ? PFW : index === 1 ? MMRW : index === 2 && APW} alt={`image_${myProjects[index].name}`} className="img_display"/>
+          <img src={index === 0 ? PFW : index === 1 ? RHW : index === 2 && APW} alt={`image_${myProjects[index].name}`} className="img_display"/>
           {/* <h2 className="name">{myProjects[index].name}</h2>
           <p className="description">{myProjects[index].description}</p> */}
-        </div>
+        </a>
 
         <div
           className="slide-right slides"

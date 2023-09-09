@@ -38,9 +38,9 @@ function Contact() {
       form.current,
       'h2JChoIcV98Vo9yBm')
         .then((result) => {
-            console.log(result.text);
+            // console.log(result.text);
         }, (error) => {
-            console.log(error.text);
+            // console.log(error.text);
           }
     );
   };
@@ -61,11 +61,11 @@ function Contact() {
       resolver: yupResolver(schema)
     });
   const onSubmit = (data, e) => {
-    console.log(data);
+    // console.log(data);
     sendEmail(e);
     reset();
   }
-  console.log(errors);
+  // console.log(errors);
 
   return (
     <main className="contact-container">
